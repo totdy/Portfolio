@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    text-decoration: none;
+    color: #000;
+}
+#app {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+html{
+    scroll-behavior: smooth;
+}

@@ -38,7 +38,7 @@ export default {
   </aside>
   <main>
     <section id="experience">
-      <h2>Experience</h2>
+      <h1>Experience</h1>
       <Experience title="Full Stack Developer" at="iS Intelligent Solutions" where="Maia, Portugal"
         when="May 2021 - Sep 2023"
         what="I designed and implemented dynamic, responsive web pages with a focus on usability and performance. I contributed to the development of interactive dashboards that enabled clear and efficient data visualization. I improved system security by implementing two-factor authentication (2FA), strengthening protection against unauthorized access. I also developed calendar management tools for the support team, allowing clear visualization of working hours and more effective coordination of daily workforce activities. Additionally, I built automation scripts to collect, transform, and import data from multiple sources and formats including FTP files, CSV, XLSX, and REST/SOAP APIs into a centralized database, improving data integration and reducing manual processing."
@@ -51,14 +51,14 @@ export default {
         skills="Problem-solving,Communication,Technical Support,Linux,Windows,MacOS" />
     </section>
     <section id="projects">
-      <h2>Projects</h2>
+      <h1>Projects</h1>
       <article>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur efficitur. Sed
           at felis a enim efficitur bibendum. Curabitur ac ligula a odio efficitur tincidunt. Nulla facilisi.</p>
       </article>
     </section>
     <section id="contact">
-      <h2>Contact</h2>
+      <h1>Contact</h1>
       <article>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur efficitur. Sed
           at felis a enim efficitur bibendum. Curabitur ac ligula a odio efficitur tincidunt. Nulla facilisi.</p>
@@ -68,21 +68,11 @@ export default {
 </template>
 
 <style scoped>
-/*@keyframes appear {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }*/
 address {
   img {
-    width: 20px;
+    width: 1.5rem;
     vertical-align: middle;
-    border-radius: 5px;
+    border-radius: 1rem;
   }
 
   button {
@@ -92,23 +82,23 @@ address {
 
 aside,
 main {
-  padding: 20px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 10px;
+  gap: 1rem;
 }
 
 aside {
   align-items: end;
-  min-width: 200px;
+  min-width: 15rem;
   width: 30%;
   background-color: rgb(165, 165, 255);
 }
 
 main {
   align-items: start;
-  min-width: 200px;
+  min-width: 15rem;
   width: 70%;
   background-color: rgb(200, 200, 255);
   overflow: auto;
@@ -116,13 +106,14 @@ main {
 }
 
 section {
-  max-width: 1000px;
+  max-width: 60rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
 
-  /*animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;*/
+  h1 {
+    text-align: center;
+    border-bottom: 0.1rem solid black;
+  }
 }
 </style>

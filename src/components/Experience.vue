@@ -5,14 +5,18 @@
         <div>{{ experienceTime }} • {{ when }}</div>
         <div>{{ what }}</div>
         <div class="skills">
-            <div v-for="skill in skillsArray" :key="skill">{{ skill }}</div>        
+            <div v-for="skill in skillsArray" :key="skill">
+                <img :src="'/assets/' + skill.toLowerCase() + '.png'" :title="skill">
+                {{ skill }}
+            </div>        
         </div>
     </article>
 </template>
 
 <script lang="ts">
+
 export default {
-    name: 'Experience',
+    name: "Experience",
     props: {
         title: {
             type: String,
@@ -74,22 +78,22 @@ export default {
 article {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.5rem;
 }
 .title {
-    font-size: 1.2em;
+    font-size: 2rem;
     font-weight: bold;
 }
 .skills {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 0.5rem;
 
     div{
-        border:     1px solid black;
-        border-radius: 100vw;
-        padding: 5px 10px;
+        border: 0.1rem solid black;
+        border-radius: 100rem;
+        padding: 0.5rem 1rem;
     }
 }
 </style>

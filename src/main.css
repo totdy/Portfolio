@@ -6,11 +6,10 @@
     text-decoration: none;
     color: #000;
 }
-html, body, #app {
-    width: 100vw;
-    height: 100vh;
-}
+
 #app {    
     display: flex;
-    flex-direction: row;        
+    flex-direction: row;
+    height: 100vh;
+    height: 100svh;
 }

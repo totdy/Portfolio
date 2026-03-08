@@ -1,7 +1,9 @@
 <template>
     <article>
         <a :href="atLink" target="_blank">
-            <img :src="'/assets/' +  logo " :title="at + ' logo'">
+            <span>
+                <img :src="'/assets/' + logo" :title="at + ' logo'">
+            </span>
         </a>
         <div>
             <a :href="atLink" target="_blank">
@@ -30,13 +32,39 @@ export default {
             required: true
         }
     },
-    
+
 };
 </script>
 
 <style scoped>
+
 article {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, 0.2);
+
+    padding: 0.6rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1000rem;
+
+    img {
+        width: -webkit-fill-available;
+        aspect-ratio: 1/1;
+    }
 }
 </style>

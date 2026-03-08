@@ -14,9 +14,11 @@ onMounted(() => {
     const map = L.map(mapContainer.value, { zoomControl: false })
         .setView([41.1579, -8.6291], 11)
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap'
-    }).addTo(map)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+    {
+        attribution: '&copy; OpenStreetMap &copy; CARTO'
+    }
+).addTo(map)
 
 })
 </script>

@@ -1,13 +1,11 @@
 <script lang="ts">
 import Experience from "./components/Experience.vue";
 import ExperienceDetails from "./components/ExperienceDetails.vue";
+import Map from "./components/Map.vue";
 
 export default {
   name: "App",
-  components: {
-    Experience,
-    ExperienceDetails,
-  }
+  components: { Experience, ExperienceDetails, Map },
 };
 </script>
 
@@ -19,24 +17,18 @@ export default {
   </nav>
   <header>
     <div>
-      <h1>Nazar</h1>
+      <h1>Hey! I'm Nazar</h1>
       <p>Frontend Developer</p>
       <address>
         <p>Porto, Portugal <img src="/assets/pt.png" alt="Portugal flag" title="Portugal flag"></p>
         <p>nazar@example.com <button title="Copy email">Copy</button></p>
       </address>
-    </div>
-    <div>
       <a href="https://github.com/totdy" target="_blank">
         <img src="/assets/github.png" alt="GitHub" title="GitHub">
       </a>
-      <a href="https://www.duyle.dev/" target="_blank">
-        <img src="/assets/github.png" alt="GitHub" title="GitHub">
-      </a>
-      <a href="https://tedawf.com/" target="_blank">
-        <img src="/assets/github.png" alt="GitHub" title="GitHub">
-      </a>
     </div>
+    <Map />
+    <div></div>
   </header>
   <main>
     <fieldset id="experience">
@@ -90,7 +82,7 @@ address {
   img {
     width: 1.5rem;
     vertical-align: middle;
-    border-radius: 1rem;
+    border-radius: 0.2rem;
   }
 
   button {
@@ -98,7 +90,17 @@ address {
   }
 }
 
-header,
+header{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 1rem;
+
+  *{
+    outline: 1px solid red;
+  }  
+}
+
 main {
   display: flex;
   flex-direction: column;

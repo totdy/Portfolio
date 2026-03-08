@@ -50,6 +50,10 @@ div {
     gap: 1rem;
 }
 
+a{
+    height: fit-content;
+}
+
 span {
     display: flex;
     align-items: center;

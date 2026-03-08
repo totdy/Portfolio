@@ -1,10 +1,12 @@
 <script lang="ts">
 import Experience from "./components/Experience.vue";
+import ExperienceDetails from "./components/ExperienceDetails.vue";
 
 export default {
   name: "App",
   components: {
     Experience,
+    ExperienceDetails,
   }
 };
 </script>
@@ -25,13 +27,13 @@ export default {
       </address>
     </div>
     <div>
-      <a href="https://github.com/totdy">
+      <a href="https://github.com/totdy" target="_blank">
         <img src="/assets/github.png" alt="GitHub" title="GitHub">
       </a>
-      <a href="https://github.com/totdy">
+      <a href="https://www.duyle.dev/" target="_blank">
         <img src="/assets/github.png" alt="GitHub" title="GitHub">
       </a>
-      <a href="https://github.com/totdy">
+      <a href="https://tedawf.com/" target="_blank">
         <img src="/assets/github.png" alt="GitHub" title="GitHub">
       </a>
     </div>
@@ -39,17 +41,31 @@ export default {
   <main>
     <fieldset id="experience">
       <legend>Experience</legend>
-      <Experience :intern="false" title="Full Stack Developer" at="iS Intelligent Solutions"
-        atLink="https://is-intelligentsolutions.com" logo="is.png" when="May 2021 - Sep 2023"
-        what="I improved system security by implementing two-factor authentication (2FA). I also developed calendar management tools for the support team, allowing clear visualization of schedule and improved coordination of daily workforce activities. Additionally, I built automation scripts to collect, transform, and import data from multiple sources and formats including FTP files, CSV, XLSX, and REST/SOAP APIs into a centralized database, improving data integration and reducing manual processin."
-        skills="HTML,CSS,JavaScript,PHP,MySQL,API (REST & SOAP),Automations,Database Management,2FA Implementation" />
-      <Experience :intern="true" title="Computer Assistant" at="iS Intelligent Solutions"
-        atLink="https://is-intelligentsolutions.com" logo="is.png" when="Feb 2019 - Jun 2019"
-        what="I designed and implemented dynamic, responsive web pages with a focus on usability and performance. I contributed to the development of interactive dashboards that enabled clear and efficient data visualization."
-        skills="Computer Management,Data Backup Solutions,Web Development,HTML,CSS,JavaScript" />
-      <Experience :intern="true" title="Technical Support" at="Porto Business School" atLink="https://www.pbs.up.pt"
-        logo="pbs.png" when="Feb 2016 - Jun 2016" what="Curricular Internship"
-        skills="Problem-solving,Communication,Technical Support,Linux,Windows,MacOS" />
+      <Experience at="iS Intelligent Solutions" atLink="https://is-intelligentsolutions.com" logo="is.png">
+        <ExperienceDetails
+          title="Full Stack Developer"
+          :intern="false"
+          when="May 2021 - Sep 2023"
+          what="I improved system security by implementing two-factor authentication (2FA). I also developed calendar management tools for the support team, allowing clear visualization of schedule and improved coordination of daily workforce activities. Additionally, I built automation scripts to collect, transform, and import data from multiple sources and formats including FTP files, CSV, XLSX, and REST/SOAP APIs into a centralized database, improving data integration and reducing manual processin."
+          skills="HTML,CSS,JavaScript,PHP,MySQL,API (REST & SOAP),Automations,Database Management,2FA Implementation"
+        />
+        <ExperienceDetails 
+          title="Computer Assistant"
+          :intern="true"
+          when="Feb 2019 - Jun 2019"
+          what="I designed and implemented dynamic, responsive web pages with a focus on usability and performance. I contributed to the development of interactive dashboards that enabled clear and efficient data visualization."
+          skills="Computer Management,Data Backup Solutions,Web Development,HTML,CSS,JavaScript"
+        />
+      </Experience>
+      <Experience at="Porto Business School" atLink="https://www.pbs.up.pt" logo="pbs.png" >
+        <ExperienceDetails 
+          title="Technical Support"
+          :intern="true"
+          when="Feb 2016 - Jun 2016" 
+          what="Curricular Internship"
+          skills="Problem-solving,Communication,Technical Support,Linux,Windows,MacOS"
+        />
+      </Experience>
     </fieldset>
 
     <fieldset id="projects">

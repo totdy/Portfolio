@@ -15,8 +15,11 @@ a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(0deg, rgb(165, 165, 255), rgb(200, 200, 255));
-    overflow: hidden;
+    
+    
+    
+    background-image: linear-gradient(48deg, rgb(165, 165, 255), rgb(200, 200, 255),rgb(165, 165, 255));
+    
     padding: 1rem;
     gap: 1rem;
 }

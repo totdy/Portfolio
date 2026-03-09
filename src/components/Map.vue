@@ -1,8 +1,5 @@
 <template>
-    <fieldset>
-        <legend>Based In Porto, Portugal <img src="/assets/pt.png" alt="Portugal flag" title="Portugal flag"></legend>
-        <div class="map" ref="mapContainer"></div>
-    </fieldset>    
+    <div id="map" ref="mapContainer"></div>
 </template>
 
 <script setup lang="ts">
@@ -31,24 +28,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.map {
+#map {
     height: 15rem;
     width: 100%;
     border-radius: 0.5rem;
-}
-
-fieldset{
-    padding: 1rem;
-    overflow: hidden;
-}
-legend {
-    font-size: 1rem;
-    font-weight: normal;
-
-    img {
-        width: 1.5rem;
-        vertical-align: middle;
-        border-radius: 0.2rem;
-    }
 }
 </style>

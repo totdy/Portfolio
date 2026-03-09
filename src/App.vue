@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Experience from "./components/Experience.vue";
 import ExperienceDetails from "./components/ExperienceDetails.vue";
+import LabeledImage from "./components/LabeledImage.vue";
 import Map from "./components/Map.vue";
 
 const stack = {
@@ -20,33 +21,44 @@ const stack = {
     <a href="#contact">/Contact</a>
   </nav>
   <header>
-    <div class="intro">
+    <div id="intro">
       <h1>Hey! I'm Nazar</h1>
       <p>I am a Full Stack Developer always looking for new challenges. If you have a project that you would like to work on, feel free to contact me.</p> 
-      <div>
-        <a href="https://github.com/totdy" target="_blank">
-          <img src="/assets/github.png" alt="GitHub" title="GitHub">
-        </a>
-        <a href="https://linkedin.com/in/nazar-poritskiy-7b8a04230" target="_blank">
-          <img src="/assets/linkedin.png" alt="LinkedIn" title="LinkedIn">
-        </a>
-        <a href="mailto:nazarslim@gmail.com" target="_blank">
-          <img src="/assets/mail.png" alt="Email" title="Email">
-        </a>
-      </div>
+      <ul>
+        <li>
+          <a href="https://github.com/totdy" target="_blank">
+            <LabeledImage img="github.png" title="GitHub" />
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/nazar-poritskiy-7b8a04230" target="_blank">
+            <LabeledImage img="linkedin.png" title="LinkedIn" />
+          </a>
+        </li>
+        <li>
+          <a href="mailto:nazarslim@gmail.com" target="_blank">
+            <LabeledImage img="mail.png" title="Email" />
+          </a>
+        </li>
+      </ul>
     </div>
-    <Map />
+    <fieldset>
+      <legend id="based">
+         Based in Porto, Portugal 
+        <img src="/assets/pt.png" alt="Portugal flag" title="Portugal flag">
+      </legend>
+      <Map />
+    </fieldset>
     <fieldset id="stack">
       <legend>My Stack</legend>
       <div v-for=" (val, key) in stack">
-        <img :src="'/assets/' + key + '.png'">
-        {{ val }}
+        <LabeledImage :img="key + '.png'" :title="val" />
       </div>
     </fieldset>
   </header>
   <main>
     <fieldset id="experience">
-      <legend>Experience</legend>
+      <legend>Work Experience</legend>
       <Experience at="iS Intelligent Solutions" atLink="https://is-intelligentsolutions.com" logo="is.png">
         <ExperienceDetails 
           title="Full Stack Developer" 
@@ -89,10 +101,26 @@ const stack = {
 
 <style scoped>
 
-.intro{
+#intro{
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+#based{
+  img {
+    width: 1.5rem;
+    vertical-align: middle;
+    border-radius: 0.2rem;
+  }
+}
+
+#stack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(auto, 1fr);
+  gap: 1rem;
+  align-items: center;
 }
 
 header,
@@ -108,6 +136,7 @@ nav {
 }
 
 header {
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(1, 1fr);
@@ -131,46 +160,32 @@ nav {
 
 fieldset,
 legend {
-  border: 0.1rem solid #eee;
-  border-radius: 1rem;
-  padding: 1rem;
+  /*border: 0.1rem solid #eee;
+  border-style: outset;*/
+  border: none;
+  border-radius: 1rem;  
+  background-color: #cfcfff
 }
 
 fieldset {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  padding: 1rem;
 }
 
 legend{
-  margin-inline: auto 0rem;
+  margin-inline: auto -1rem;
+  padding: 0.5rem 1rem;
 }
 
 ul{
   list-style: none;
-
-  li{
-    display: flex;
-    flex-direction: column;
-    border: 0.1rem solid #eee;
-    border-radius: 1rem;
-    align-items: center;
-  }
-}
-#stack {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(auto, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
   gap: 1rem;
-
-  div{    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  img{
-    width: 3rem;
-  }
 }
+
 </style>

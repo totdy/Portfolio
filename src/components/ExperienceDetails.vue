@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h2>
-            <span>{{ title }} <span v-if="intern"> Intern</span></span>
+        <div class="title">
+            <h1>{{ title }} <span v-if="intern"> Intern</span></h1>
             <p :title="experienceTime">{{ when[0] }} - {{ when[1] }}</p>
-        </h2>        
+        </div>        
         <ul>
             <li v-for="what in whats" :key="what">{{ what }}</li>
         </ul>
@@ -62,23 +62,16 @@ if (months > 0) {
 </script>
 <style scoped>
 
-h2{
-    font-size: 1.2rem;
-    font-weight: bold;
+.title{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-    
-    p{
-        font-size: 1rem;
-        font-weight: normal;
-        word-break: keep-all;
-    }
+    justify-content: space-between;      
+    align-items: center;  
 }
 
 ul{
-    margin-left: 1.2rem;
+    padding-left: 1rem;
 }
 
 ol {

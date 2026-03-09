@@ -15,15 +15,18 @@ const stack = {
 </script>
 
 <template>
-  <nav>
-    <a href="#experience">/Experience</a>
-    <a href="#projects">/Projects</a>
-    <a href="#contact">/Contact</a>
-  </nav>
-  <header>
-    <div id="intro">
+  <main>
+    <nav>
+      <a href="#work">/Experience</a>
+      <a href="#projects">/Projects</a>
+      <a href="#contact">/Contact</a>
+    </nav>
+    <section id="intro">
       <h1>Hey! I'm Nazar</h1>
       <p>I am a Full Stack Developer always looking for new challenges. If you have a project that you would like to work on, feel free to contact me.</p> 
+      <p>Based in Porto, Portugal <img class="flag" src="/assets/pt.png" alt="Portugal flag" title="Portugal flag"></p>
+    </section>
+    <section id="map">
       <ul>
         <li>
           <a href="https://github.com/totdy" target="_blank">
@@ -41,24 +44,18 @@ const stack = {
           </a>
         </li>
       </ul>
-    </div>
-    <fieldset>
-      <legend id="based">
-         Based in Porto, Portugal 
-        <img src="/assets/pt.png" alt="Portugal flag" title="Portugal flag">
-      </legend>
       <Map />
-    </fieldset>
-    <fieldset id="stack">
-      <legend>My Stack</legend>
-      <div v-for=" (val, key) in stack">
-        <LabeledImage :img="key + '.png'" :title="val" />
-      </div>
-    </fieldset>
-  </header>
-  <main>
-    <fieldset id="experience">
-      <legend>Work Experience</legend>
+    </section>
+    <section id="stack">
+      <div class="title">My Stack</div>
+      <div class="stack"> 
+        <div v-for=" (val, key) in stack">
+          <LabeledImage :img="key + '.png'" :title="val" />
+        </div>
+      </div> 
+    </section>
+    <section id="work">
+      <div class="title">Work Experience</div>
       <Experience at="iS Intelligent Solutions" atLink="https://is-intelligentsolutions.com" logo="is.png">
         <ExperienceDetails 
           title="Full Stack Developer" 
@@ -81,73 +78,68 @@ const stack = {
           :whats="['Responded to help desk tickets, diagnosing software and hardware problems', 'Guided users through step-by-step solutions', 'Helped onboarding new users by seting up their accounts and granting the necessary system accesses']"
           :skills="['Problem olving', 'Communication', 'Help desk', 'Linux', 'Windows', 'MacOS']" />
       </Experience>
-    </fieldset>
-    <fieldset id="projects">
-      <legend>Projects</legend>
+    </section>
+    <section id="projects">
+      <div class="title">Projects</div>
       <article>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur efficitur. Sed
           at felis a enim efficitur bibendum. Curabitur ac ligula a odio efficitur tincidunt. Nulla facilisi.</p>
       </article>
-    </fieldset>
-    <fieldset id="contact">
-      <legend>Contact</legend>
-      <article>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur efficitur. Sed
-          at felis a enim efficitur bibendum. Curabitur ac ligula a odio efficitur tincidunt. Nulla facilisi.</p>
-      </article>
-    </fieldset>
+    </section>
   </main>
 </template>
 
 <style scoped>
 
-#intro{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+#intro { grid-area: intro;}
+#map { grid-area: map;}
+#stack { grid-area: stack;}
+#work { grid-area: work;}
+#projects { grid-area: projects;}
+#contact { grid-area: contact;}
+
+.flag {
+  width: 1.5rem;
+  vertical-align: middle;
+  border-radius: 0.2rem;
 }
 
-#based{
-  img {
-    width: 1.5rem;
-    vertical-align: middle;
-    border-radius: 0.2rem;
-  }
+.title{
+  background-color: var(--bg2);
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
-#stack {
+.stack {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(auto, 1fr);
-  gap: 1rem;
+  grid-template-rows: auto;
   align-items: center;
-}
-
-header,
-main,
-nav {
-  max-width: 60rem;
-}
-
-@media (max-width: 900px) {
-  header {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-header {
-  padding-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(1, 1fr);
-  gap: 1rem;
+  justify-items: center;
+  align-content: space-evenly;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  max-width: 60rem;
 
+  display: grid;
+  gap: 1rem;
+  grid-template: 
+      "intro map stack"
+      "work work work"
+      "projects projects projects";
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template: 
+      "intro"
+      "map" 
+      "stack"
+      "work"
+      "projects";
+  }
 }
 
 nav {
@@ -158,25 +150,20 @@ nav {
   z-index: 100;
 }
 
-fieldset,
-legend {
-  /*border: 0.1rem solid #eee;
-  border-style: outset;*/
+section{
   border: none;
-  border-radius: 1rem;  
-  background-color: #cfcfff
-}
+  border-radius: 1rem;    
 
-fieldset {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  
   padding: 1rem;
-}
+  
+  background-color: var(--bg1);
 
-legend{
-  margin-inline: auto -1rem;
-  padding: 0.5rem 1rem;
+  position: relative;
 }
 
 ul{

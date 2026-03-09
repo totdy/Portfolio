@@ -7,7 +7,7 @@
         </a>
         <div>
             <a :href="atLink" target="_blank">
-                <h1>{{ at }}<img src="/assets/link.svg"></h1>
+                <h3>{{ at }}<img src="/assets/link.svg"></h3>
             </a>
             <slot></slot>
         </div>
@@ -33,6 +33,7 @@ const props = defineProps(
 </script>
 
 <style scoped>
+
 article {
     display: flex;
     flex-direction: row;
@@ -42,11 +43,7 @@ article {
 div {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-}
-
-a {
-    height: fit-content;
+    gap: 0.5rem;
 }
 
 span {

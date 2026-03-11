@@ -3,12 +3,14 @@ import Experience from "./components/Experience.vue";
 import ExperienceDetails from "./components/ExperienceDetails.vue";
 import LabeledImage from "./components/LabeledImage.vue";
 import Map from "./components/Map.vue";
+import Project from "./components/Project.vue";
 
 const stack = {
   php: "PHP",
   mysql: "MySQL",
   javascript: "JS",
   html: "HTML",
+  typescript: "TS",
   css: "CSS",
 }
 
@@ -43,7 +45,7 @@ const stack = {
       </ul>
     </section>
     <section id="map">
-      <div>Based in Porto, Portugal <img class="flag" src="/assets/pt.png" alt="Portugal flag" title="Portugal flag"></div>
+      <div>Based in Porto, Portugal <img class="flag" src="/assets/icons/pt.png" alt="Portugal flag" title="Portugal flag"></div>
       <Map />
     </section>
     <section id="stack">
@@ -81,10 +83,12 @@ const stack = {
     </section>
     <section id="projects">
       <div class="title">Projects</div>
-      <article>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur efficitur. Sed
-          at felis a enim efficitur bibendum. Curabitur ac ligula a odio efficitur tincidunt. Nulla facilisi.</p>
-      </article>
+      <Project 
+        name="Homa Away" 
+        description="A simple AirBnB clone made for my CTeSP final project in 2019"
+        :stack="['PHP', 'HTML', 'CSS', 'MySQL']"
+        :screens="['homeAway1.png','homeAway2.png','homeAway3.png']"
+      />
     </section>
   </main>
 </template>
@@ -120,6 +124,7 @@ const stack = {
   align-items: center;
   justify-items: center;
   align-content: space-evenly;
+  row-gap: 1rem;
 }
 
 main {

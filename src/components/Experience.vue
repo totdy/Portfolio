@@ -2,12 +2,12 @@
     <article>
         <a :href="atLink" target="_blank">
             <span>
-                <img :src="'/assets/' + logo" :title="at + ' logo'">
+                <img :src="'/assets/icons/' + logo" :title="at + ' logo'">
             </span>
         </a>
         <div>
             <a :href="atLink" target="_blank">
-                <h3>{{ at }}<img src="/assets/link.svg"></h3>
+                <h3>{{ at }}<img src="/assets/icons/link.svg"></h3>
             </a>
             <slot></slot>
         </div>

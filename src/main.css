@@ -21,11 +21,16 @@ a{
 
 #app {    
     background-image: linear-gradient(45deg, var(--bg1), var(--bg2), var(--bg1));
+    
     padding: 1rem;
+    
     display: flex;
     justify-content: center;
+    
     min-height: 100vh;
     min-height: 100svh;
+
+    position: relative;
 }
 
 .leaflet-control-attribution{

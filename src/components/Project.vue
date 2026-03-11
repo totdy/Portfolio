@@ -1,11 +1,19 @@
 <template>
-    <article>
-        <h1>{{ name }}</h1>
-        <p>{{ description }}</p>
-        <img :src="'/assets/screenshots/' + screens[0]">
-        <ol>
-            <li v-for="skill in stack" :key="skill">{{ skill }}</li>
-        </ol>        
+    <article>        
+        <img class="cover" :src="'/assets/screenshots/' + cover">        
+        <div class="details">
+            <h1>{{ name }}</h1>
+            <p>{{ description }}</p>
+            <ol>
+                <li v-for="skill in stack" :key="skill">{{ skill }}</li>
+            </ol>
+            <a v-if="source" :href="source" target="_blank">
+                <h3>Source<img src="/assets/icons/link.svg"></h3>
+            </a>
+            <a v-if="visit" :href="visit" target="_blank">
+                <h3>Visit<img src="/assets/icons/link.svg"></h3>
+            </a>
+        </div>
     </article>
 </template>
 
@@ -27,21 +35,25 @@ const props = defineProps({
         type: Array<string>,
         required: true
     },
+    visit: String,
+    source: String
 })
+
+const cover = props.screens[Math.floor(Math.random()*props.screens.length)];
+
 </script>
 
 <style scoped>
 
-.title{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;      
-    align-items: center;  
+article{    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;    
 }
 
-ul{
-    padding-left: 1rem;
+@media (max-width: 900px) {
+
 }
 
 ol {
@@ -60,4 +72,26 @@ ol {
         font-size: 0.8rem;
     }
 }
+
+.details{
+    overflow: hidden;
+
+    border: 0.2rem solid var(--bg2);
+    border-radius: 1rem;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cover{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+
+    border-radius: 1rem;
+}
+
 </style>

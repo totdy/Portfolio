@@ -17,12 +17,12 @@ const stack = {
 </script>
 
 <template>
-  <main>
-    <nav>
-      <a href="#work">/Experience</a>
-      <a href="#projects">/Projects</a>
-      <a href="#contact">/Contact</a>
-    </nav>
+  <nav>
+    <a href="#work">/Experience</a>
+    <a href="#projects">/Projects</a>
+    <a href="#contact">/Contact</a>
+  </nav>
+  <main>    
     <section id="intro">
       <h1>Hey! I'm Nazar</h1>
       <p>I am a Full Stack Developer always looking for new challenges. If you have a project that you would like to work on, feel free to contact me.</p>
@@ -84,10 +84,18 @@ const stack = {
     <section id="projects">
       <div class="title">Projects</div>
       <Project 
-        name="Homa Away" 
+        name="Home Away" 
         description="A simple AirBnB clone made for my CTeSP final project in 2019"
         :stack="['PHP', 'HTML', 'CSS', 'MySQL']"
         :screens="['homeAway1.png','homeAway2.png','homeAway3.png']"
+        source="https://github.com/totdy/HomeAway"
+      />
+      <Project 
+        name="Home Away" 
+        description="A simple AirBnB clone made for my CTeSP final project in 2019"
+        :stack="['PHP', 'HTML', 'CSS', 'MySQL']"
+        :screens="['homeAway1.png','homeAway2.png','homeAway3.png']"
+        visit="https://github.com/totdy/HomeAway"
       />
     </section>
   </main>

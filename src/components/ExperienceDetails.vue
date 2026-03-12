@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="title">
-            <h1>{{ title }} <span v-if="intern"> Intern</span></h1>
+            <h1>{{ title }}</h1>
             <p :title="experienceTime">{{ when[0] }} - {{ when[1] }}</p>
         </div>        
         <ul>
@@ -14,11 +14,7 @@
 </template>
 <script setup lang="ts">
 const props = defineProps(
-    {
-        intern: {
-            type: Boolean,
-            required: true
-        },
+    {        
         title: {
             type: String,
             required: true
@@ -72,6 +68,8 @@ if (months > 0) {
 
 ul{
     padding-left: 1rem;
+
+    margin-bottom: 0.5rem;
 }
 
 ol {

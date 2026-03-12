@@ -64,9 +64,9 @@ const stack = {
           :intern="false" 
           :when="['May 2021', 'Sep 2023']"
           :whats="['Improved system security by implementing two-factor authentication (2FA)', 'Developed calendar management tools for the support team, allowing clear visualization of schedule and improved coordination of daily workforce activities', 'Built automation scripts to collect, transform, and import data from multiple sources and formats including CSV, XLSX files and REST/SOAP APIs into a centralized database, improving data integration and reducing manual processin']"
-          :skills="['Web Development', 'PHP', 'MySQL', 'API (REST & SOAP)', 'Automations', 'Database Management', '2FA']" />
+          :skills="['HTML|CSS|JS', 'PHP', 'MySQL', 'API (REST & SOAP)', 'Automations', 'Database Management', '2FA']" />
         <ExperienceDetails 
-          title="Computer Assistant" 
+          title="Computer Assistant Internship" 
           :intern="true" 
           :when="['Feb 2019', 'Jun 2019']"
           :whats="['Designed and implemented dynamic, responsive web pages with a focus on usability and performance', 'Contributed to the development of interactive dashboards that enabled clear and efficient data visualization']"
@@ -74,11 +74,11 @@ const stack = {
       </Experience>
       <Experience at="Porto Business School" atLink="https://www.pbs.up.pt" logo="pbs.png">
         <ExperienceDetails 
-          title="Technical Support" 
+          title="Technical Support Internship" 
           :intern="true" 
           :when="['Feb 2016', 'Jun 2016']"
           :whats="['Responded to help desk tickets, diagnosing software and hardware problems', 'Guided users through step-by-step solutions', 'Helped onboarding new users by seting up their accounts and granting the necessary system accesses']"
-          :skills="['Problem olving', 'Communication', 'Help desk', 'Linux', 'Windows', 'MacOS']" />
+          :skills="['Problem solving', 'Communication', 'Help desk', 'Linux', 'Windows', 'MacOS']" />
       </Experience>
     </section>
     <section id="projects">

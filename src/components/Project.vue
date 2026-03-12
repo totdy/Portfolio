@@ -1,6 +1,12 @@
 <template>
-    <article>        
-        <img class="cover" :src="'/assets/screenshots/' + cover">        
+    <article>
+        <div class="carousel">
+            <img :src="'/assets/screenshots/' + screens[index]">
+            <div>
+                <button @click="prev">←</button>
+                <button @click="next">→</button>
+            </div>            
+        </div>
         <div class="details">
             <h1>{{ name }}</h1>
             <p>{{ description }}</p>
@@ -18,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const props = defineProps({
     name: {
         type: String,
@@ -39,21 +47,37 @@ const props = defineProps({
     source: String
 })
 
-const cover = props.screens[Math.floor(Math.random()*props.screens.length)];
+const index = ref(0)
+
+function prev() {
+    index.value--
+
+    if (index.value < 0) index.value = props.screens.length - 1;
+}
+
+function next() {
+    index.value++
+
+    if (index.value >= props.screens.length) index.value = 0;
+}
 
 </script>
 
 <style scoped>
-
-article{    
+article {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    gap: 1rem;    
+    gap: 0.5rem;
 }
 
 @media (max-width: 900px) {
-
+    article{
+        grid-template-columns: 1fr;        
+    }
+    .details{
+        margin-bottom: 2rem;
+    }
 }
 
 ol {
@@ -73,7 +97,7 @@ ol {
     }
 }
 
-.details{
+.details {
     overflow: hidden;
 
     border: 0.2rem solid var(--bg2);
@@ -86,12 +110,49 @@ ol {
     gap: 1rem;
 }
 
-.cover{
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
+.carousel {
+    position: relative;
 
-    border-radius: 1rem;
+    &:hover {
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    button{
+        padding: 0.4rem 1rem;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10rem;
+        cursor: pointer;
+        font-size: 2rem;
+
+        &:hover{
+            filter: invert();
+        }
+    }
+
+    div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        display: none;
+        
+        z-index: 1;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+
+        z-index: 0;
+
+        border-radius: 1rem;
+    }
 }
-
 </style>

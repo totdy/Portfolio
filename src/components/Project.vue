@@ -69,6 +69,14 @@ article {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 0.5rem;
+
+    &:nth-child(even) {
+        direction: rtl;
+        
+        * {
+            direction: ltr;
+        }
+    }
 }
 
 @media (max-width: 900px) {
@@ -107,6 +115,7 @@ ol {
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -124,7 +133,7 @@ ol {
         padding: 0.4rem 1rem;
         border: none;
         background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 10rem;
+        border-radius: 1rem;
         cursor: pointer;
         font-size: 2rem;
 
@@ -138,7 +147,7 @@ ol {
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
+        bottom: 5px;
         
         display: none;
         

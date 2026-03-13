@@ -1,6 +1,6 @@
 <template>
     <div>        
-        <img :src="'/assets/icons/' + img" :alt="title + ' icon'" :title="title">
+        <img :src="baseUrl + '/assets/icons/' + img" :alt="title + ' icon'" :title="title">
         <p>{{ title }}</p>
     </div>    
 </template>
@@ -16,6 +16,8 @@
             required: true
         }
     })
+
+    const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <style scoped>

@@ -2,7 +2,7 @@
     <article>
         <a :href="atLink" target="_blank">
             <span>
-                <img :src="'/assets/icons/' + logo" :title="at + ' logo'">
+                <img :src="baseUrl + '/assets/icons/' + logo" :title="at + ' logo'">
             </span>
         </a>
         <div>
@@ -30,6 +30,8 @@ const props = defineProps(
             required: true
         }
     })
+
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <style scoped>

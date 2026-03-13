@@ -1,7 +1,7 @@
 <template>
     <article>
         <div class="carousel">
-            <img :src="'/assets/screenshots/' + screens[index]">
+            <img :src="baseUrl + 'assets/screenshots/' + screens[index]">
             <div>
                 <button @click="prev">←</button>
                 <button @click="next">→</button>
@@ -46,6 +46,8 @@ const props = defineProps({
     visit: String,
     source: String
 })
+
+const baseUrl = import.meta.env.BASE_URL
 
 const index = ref(0)
 

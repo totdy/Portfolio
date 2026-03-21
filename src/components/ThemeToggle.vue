@@ -29,16 +29,13 @@ function ToggleTheme() {
 </script>
 <style scoped lang="css">
 button {
-    cursor: pointer;
-    border: none;
-    background: transparent;
-
     padding: 0.3rem 0.3rem 0.1rem 0.3rem;
+}
 
-    &:hover{
-        color: var(--tch) !important;
-        background-color: var(--bg2) !important;
-        border-radius: 0.5rem !important;
+@media print {
+    button {
+        display: none;
     }
 }
+
 </style>

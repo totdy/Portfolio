@@ -134,16 +134,10 @@ h3{
     }
 
     button{
-        padding: 0.4rem 1rem;
-        border: none;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 1rem;
-        cursor: pointer;
+        padding: 0.4rem 1rem;        
+        background-color: var(--bg1);
         font-size: 2rem;
-
-        &:hover{
-            filter: invert();
-        }
+        align-self: center;
     }
 
     div {

@@ -25,16 +25,23 @@
     color: var(--tc);
 }
 
-a{
+a,
+button{
+    display: block;
+    
     height: fit-content;
     width: fit-content;
     
-    &:hover {
-        * {
-            color: var(--tch) !important;
-            background-color: var(--bg2) !important;
-            border-radius: 0.5rem !important;            
-        }        
+    cursor: pointer;
+    background: transparent;
+    
+    border: none;
+    border-radius: 0.5rem !important;
+
+    &:hover {        
+        color: var(--tch) !important;
+        background-color: var(--bg2) !important;
+                                   
         /*filter: invert(32%) sepia(77%) saturate(633%) hue-rotate(220deg) brightness(92%) contrast(90%);*/
     }
 }
@@ -61,4 +68,27 @@ h3{
     min-height: 100svh;
 
     position: relative;
+}
+
+@media print {
+    * {
+        color: black;
+        background-color: white;
+        border: none !important;
+    }
+    img, svg {
+        display: none;
+    }
+    a {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        &:after {
+            content: attr(href);
+            display: inline-block ;
+        }
+    }
 }

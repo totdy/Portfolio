@@ -74,4 +74,18 @@ span {
         aspect-ratio: 1/1;
     }
 }
+
+@media print {
+    span {
+        width: 0rem;
+        height: 0rem;
+    }
+    article {    
+        flex-direction: column;
+        gap: 0rem;
+    }
+    h2{
+        padding: 0;
+    }
+}
 </style>

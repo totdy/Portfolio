@@ -14,14 +14,18 @@ const stack = {
   css: "CSS",
 }
 
+function Print(){
+  window.print();
+}
+
 </script>
 
 <template>
   <main>    
     <section id="intro">
-      <h1>Hey! I'm Nazar <ThemeToggle/></h1>
+      <h1>Hey! I'm Nazar Poritskiy <ThemeToggle/></h1>
       <p>I am a Full Stack Developer based in Porto, Portugal <img class="flag ignoreTheme" src="/assets/icons/pt.png" alt="Portugal flag" title="Portugal flag"> always looking for new challenges. If you have a project that you would like to work on, feel free to contact me.</p>      
-      <ul>
+      <ul class="socials">
         <li>
           <a href="https://github.com/totdy" target="_blank">
             <LabeledImage img="github.png" title="GitHub" />
@@ -36,6 +40,16 @@ const stack = {
           <a href="mailto:nazarslim@gmail.com" target="_blank">
             <LabeledImage img="mail.png" title="Email" />
           </a>
+        </li>
+        <li class="portfolioLink">
+          <a href="https://totdy.github.io/Portfolio" target="_blank">
+            <LabeledImage img="mail.png" title="Portfolio" />
+          </a>
+        </li>
+        <li class="printBtn">
+          <button @click="Print">
+            <LabeledImage img="cv.png" title="CV" />
+          </button>
         </li>
       </ul>
     </section>    
@@ -100,6 +114,10 @@ const stack = {
 #work { grid-area: work;}
 #projects { grid-area: projects;}
 #contact { grid-area: contact;}
+
+.portfolioLink{
+  display: none;
+}
 
 .flag {
   width: 1.5rem;
@@ -172,13 +190,46 @@ section{
   }
 }
 
-ul{
+.socials {
   list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   gap: 1rem;
+}
+
+@media print {
+  #projects{
+    display: none;
+  }
+
+  .socials {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+
+    *{
+      padding: 0;
+    }
+  }
+
+  .portfolioLink{
+    display: block;
+  }
+  
+  .printBtn{
+    display: none;
+  }
+
+  .title {
+    padding: 0;
+  }
+  section {
+    gap: 0rem;
+    padding: 0rem;
+  }
 }
 
 </style>

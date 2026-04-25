@@ -69,6 +69,7 @@ span {
     border-radius: 1000rem;
 
     img {
+        min-width: 1.5rem;
         width: -webkit-fill-available;
         height: -webkit-fill-available;
         aspect-ratio: 1/1;

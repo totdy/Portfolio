@@ -97,6 +97,13 @@ function Print(){
     <section id="projects">
       <h4 class="title">Projects</h4>
       <Project 
+        name="GreenhouseCMS" 
+        description="Developed a simple content management system for greenhouse operations."
+        :stack="['FastAPI', 'Alembic', 'SQLite', 'Vue', 'Chart.js', 'i18n']"
+        :screens="['greenhouseCMS1.png','greenhouseCMS2.png','greenhouseCMS3.png']"
+        source="https://github.com/totdy/GreenhouseCMS"
+      />
+      <Project 
         name="Home Away" 
         description="Developed a simple Airbnb clone as my final project."
         :stack="['PHP', 'HTML', 'CSS', 'MySQL']"

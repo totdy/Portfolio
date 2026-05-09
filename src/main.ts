@@ -1,12 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import 'leaflet/dist/leaflet.css'
 
-const theme = localStorage.getItem("theme");
-if(theme!=null){
-    document.documentElement.dataset.theme = theme;
-}else{
-    document.documentElement.dataset.theme = "light";
-}
+const theme = localStorage.getItem("theme") ?? "light"
+document.documentElement.dataset.theme = theme
 
 createApp(App).mount('#app')

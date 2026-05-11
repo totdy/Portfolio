@@ -27,6 +27,18 @@ ol {
         padding: 0.25rem 0.5rem;
         border-radius: 1rem;
         font-size: 0.8rem;
+
+        @media print {
+            padding: 0;
+
+            &::after {
+                content: ",";
+            }
+
+            &:last-child::after {
+                content: none;
+            }
+        }
     }
 }
 </style>

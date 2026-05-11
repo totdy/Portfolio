@@ -3,7 +3,7 @@
         <div class="title">
             <h2>{{ title }}</h2>
             <p :title="experienceTime">{{ when[0] }} - {{ when[1] }}</p>
-        </div>        
+        </div>
         <ul>
             <li v-for="what in whats" :key="what">{{ what }}</li>
         </ul>
@@ -14,7 +14,7 @@
 import BubbleList from './BubbleList.vue';
 
 const props = defineProps(
-    {        
+    {
         title: {
             type: String,
             required: true
@@ -57,22 +57,21 @@ if (months > 0) {
 
 </script>
 <style scoped>
-
-.title{
+.title {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;      
+    justify-content: space-between;
     align-items: center;
 }
 
-.details{
+.details {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-ul{
+ul {
     padding-left: 1rem;
 }
 </style>

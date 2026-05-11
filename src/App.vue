@@ -30,6 +30,11 @@ function Print() {
           alt="Portugal flag" title="Portugal flag"> always looking for new challenges. If you have a project that you
         would like to work on, feel free to contact me.</p>
       <ul class="socials">
+        <li class="portfolioLink">
+          <a href="https://totdy.github.io/Portfolio" target="_blank">
+            <LabeledImage img="mail.png" title="Portfolio" />
+          </a>
+        </li>
         <li>
           <a href="https://github.com/totdy" target="_blank">
             <LabeledImage img="github.png" title="GitHub" />
@@ -43,11 +48,6 @@ function Print() {
         <li>
           <a href="mailto:nazarslim@gmail.com" target="_blank">
             <LabeledImage img="mail.png" title="Email" />
-          </a>
-        </li>
-        <li class="portfolioLink">
-          <a href="https://totdy.github.io/Portfolio" target="_blank">
-            <LabeledImage img="mail.png" title="Portfolio" />
           </a>
         </li>
         <li class="printBtn">
@@ -68,45 +68,35 @@ function Print() {
     <section id="work">
       <h4 class="title">Work Experience</h4>
       <Experience at="iS Intelligent Solutions" atLink="https://is-intelligentsolutions.com" logo="is.png">
-        <ExperienceDetails title="Full Stack Developer" 
-          :when="['May 2021', 'Sep 2023']" 
-          :whats="[
-            'Improved system security by implementing two-factor authentication (2FA)',
-            'Developed calendar management tools for the support team, allowing clear visualization of schedules and improved coordination of daily workforce activities',
-            'Built automation scripts to collect, transform, and import data from multiple sources and formats, including CSV and XLSX files and REST/SOAP APIs, into a centralized database, improving data integration and reducing manual processing'
-          ]"
+        <ExperienceDetails title="Full Stack Developer" :when="['May 2021', 'Sep 2023']" :whats="[
+          'Improved system security by implementing two-factor authentication (2FA)',
+          'Developed calendar management tools for the support team, allowing clear visualization of schedules and improved coordination of daily workforce activities',
+          'Built automation scripts to collect, transform, and import data from multiple sources and formats, including CSV and XLSX files and REST/SOAP APIs, into a centralized database, improving data integration and reducing manual processing'
+        ]"
           :skills="['HTML•CSS•JS', 'PHP', 'MySQL', 'API (REST & SOAP)', 'Automations', 'Database Management', '2FA']" />
-        <ExperienceDetails title="Computer Assistant Internship" 
-          :when="['Feb 2019', 'Jun 2019']" 
-          :whats="[
-            'Designed and implemented dynamic, responsive web pages with a focus on usability and performance',
-            'Contributed to the development of interactive dashboards that enabled clear and efficient data visualization'
-          ]" 
-          :skills="['Computer management', 'Data Backup Solutions', 'HTML', 'CSS', 'JavaScript']" />
+        <ExperienceDetails title="Computer Assistant Internship" :when="['Feb 2019', 'Jun 2019']" :whats="[
+          'Designed and implemented dynamic, responsive web pages with a focus on usability and performance',
+          'Contributed to the development of interactive dashboards that enabled clear and efficient data visualization'
+        ]" :skills="['Computer management', 'Data Backup Solutions', 'HTML', 'CSS', 'JavaScript']" />
       </Experience>
       <Experience at="Porto Business School" atLink="https://www.pbs.up.pt" logo="pbs.png">
-        <ExperienceDetails title="Technical Support Internship" 
-          :when="['Feb 2016', 'Jun 2016']" 
-          :whats="[
-            'Responded to help desk tickets, diagnosing software and hardware problems',
-            'Guided users through step-by-step solutions',
-            'Helped onboard new users by setting up their accounts and granting the necessary system access'
-          ]" 
-          :skills="['Problem solving', 'Communication', 'Help desk', 'Linux', 'Windows', 'MacOS']" />
+        <ExperienceDetails title="Technical Support Internship" :when="['Feb 2016', 'Jun 2016']" :whats="[
+          'Responded to help desk tickets, diagnosing software and hardware problems',
+          'Guided users through step-by-step solutions',
+          'Helped onboard new users by setting up their accounts and granting the necessary system access'
+        ]" :skills="['Problem solving', 'Communication', 'Help desk', 'Linux', 'Windows', 'MacOS']" />
       </Experience>
     </section>
     <section id="projects">
       <h4 class="title">Projects</h4>
       <Project name="Greenhouse CMS"
-        description="Developed a simple content management system for greenhouse operations."
+        description="User-friendly dashboard I built for my mom to track greenhouse harvests, sales, and revenue."
         :stack="['FastAPI', 'Pydantic', 'Alembic', 'SQLite', 'Vue', 'TypeScript', 'CSS', 'Chart.js', 'i18n']"
         :screens="['greenhouseCMS1.png', 'greenhouseCMS2.png', 'greenhouseCMS3.png']"
         source="https://github.com/totdy/GreenhouseCMS" />
-      <Project name="Home Away"
-        description="Developed a simple Airbnb clone as my final project."
+      <Project name="Home Away" description="Developed a simple Airbnb clone as my final project."
         :stack="['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript']"
-        :screens="['homeAway1.png', 'homeAway2.png', 'homeAway3.png']"
-        source="https://github.com/totdy/HomeAway" />
+        :screens="['homeAway1.png', 'homeAway2.png', 'homeAway3.png']" source="https://github.com/totdy/HomeAway" />
     </section>
   </main>
 </template>
@@ -216,7 +206,7 @@ section {
 
 @media print {
   #projects {
-    display: none;
+    margin-top: 3rem;
   }
 
   .socials {
@@ -238,13 +228,11 @@ section {
     display: none;
   }
 
-  .title {
-    padding: 0;
-  }
-
-  section {
-    gap: 0rem;
-    padding: 0rem;
+  .title,
+  section,
+  h2,
+  h4 {
+    padding: 0rem !important;
   }
 }
 </style>

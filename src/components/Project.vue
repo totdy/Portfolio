@@ -5,16 +5,18 @@
             <div>
                 <button @click="prev">←</button>
                 <button @click="next">→</button>
-            </div>            
+            </div>
         </div>
         <div class="details">
-            <h1>{{ name }}</h1>
+            <h2>{{ name }}</h2>
             <p>{{ description }}</p>
-            <BubbleList :list="stack"/>            
+            <BubbleList :list="stack" />
             <a v-if="source" :href="source" target="_blank">
                 <h3>
-                    Source
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-external-link ">
+                    Source code
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" class="tabler-icon tabler-icon-external-link ">
                         <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
                         <path d="M11 13l9 -9"></path>
                         <path d="M15 4h5v5"></path>
@@ -24,7 +26,9 @@
             <a v-if="visit" :href="visit" target="_blank">
                 <h3>
                     Visit
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-external-link ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" class="tabler-icon tabler-icon-external-link ">
                         <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
                         <path d="M11 13l9 -9"></path>
                         <path d="M15 4h5v5"></path>
@@ -87,7 +91,7 @@ article {
 
     &:nth-child(even) {
         direction: rtl;
-        
+
         * {
             direction: ltr;
         }
@@ -95,15 +99,16 @@ article {
 }
 
 @media (max-width: 900px) {
-    article{
-        grid-template-columns: 1fr;        
+    article {
+        grid-template-columns: 1fr;
     }
-    .details{
+
+    .details {
         margin-bottom: 2rem;
     }
 }
 
-h3{
+h3 {
     display: flex;
 
     padding: 0.5rem;
@@ -133,8 +138,8 @@ h3{
         }
     }
 
-    button{
-        padding: 0.4rem 1rem;        
+    button {
+        padding: 0.4rem 1rem;
         background-color: var(--bg1);
         font-size: 2rem;
         align-self: center;
@@ -146,9 +151,9 @@ h3{
         left: 0;
         right: 0;
         bottom: 5px;
-        
+
         display: none;
-        
+
         z-index: 1;
     }
 
@@ -160,6 +165,18 @@ h3{
         z-index: 0;
 
         border-radius: 1rem;
+    }
+}
+
+@media print {
+    .carousel {
+        display: none !important;
+    }
+
+    .details,
+    h3 {
+        margin: 0;
+        padding: 0;
     }
 }
 </style>

@@ -65,6 +65,18 @@ function Print() {
         </div>
       </div>
     </section>
+    <section id="education">
+      <h4 class="title">Education</h4>
+      <Experience at="Instituto Superior Politécnico Gaya" atLink="https://ispgaya.pt" logo="ispg.png">
+        <ExperienceDetails title="CTeSP in Computer Networks and Systems" :when="['Sep 2017', 'Jul 2019']" :whats="[
+          'Completed an EQF Level 5 course with hands-on training in networking, systems administration, programming, databases and web development',
+          'Built practical skills in installing, configuring, and managing computer networks, servers, operating systems and secure IT infrastructures through laboratory projects',
+          'Completed a Computer Assistant Internship focused on responsive web development, computer management and data backup solutions'
+        ]"
+          :skills="['Network Administration', 'Critical Thinking', 'Adaptability', 'Teamwork', 'Project Management', 'Time Management']" />
+      </Experience>
+
+    </section>
     <section id="work">
       <h4 class="title">Work Experience</h4>
       <Experience at="iS Intelligent Solutions" atLink="https://is-intelligentsolutions.com" logo="is.png">
@@ -74,6 +86,7 @@ function Print() {
           'Built automation scripts to collect, transform, and import data from multiple sources and formats, including CSV and XLSX files and REST/SOAP APIs, into a centralized database, improving data integration and reducing manual processing'
         ]"
           :skills="['HTML•CSS•JS', 'PHP', 'MySQL', 'API (REST & SOAP)', 'Automations', 'Database Management', '2FA']" />
+        <br>
         <ExperienceDetails title="Computer Assistant Internship" :when="['Feb 2019', 'Jun 2019']" :whats="[
           'Designed and implemented dynamic, responsive web pages with a focus on usability and performance',
           'Contributed to the development of interactive dashboards that enabled clear and efficient data visualization'
@@ -102,6 +115,10 @@ function Print() {
 </template>
 
 <style scoped>
+#education {
+  grid-area: education;
+}
+
 #intro {
   grid-area: intro;
 }
@@ -162,6 +179,7 @@ main {
   gap: 1rem;
   grid-template:
     "intro intro stack"
+    "education education education"
     "work work work"
     "projects projects projects";
   grid-template-rows: auto;
@@ -170,6 +188,7 @@ main {
     grid-template:
       "intro"
       "stack"
+      "education"
       "work"
       "projects";
   }
@@ -205,10 +224,6 @@ section {
 }
 
 @media print {
-  #projects {
-    margin-top: 3rem;
-  }
-
   .socials {
     flex-direction: column;
     align-items: flex-start;
@@ -228,11 +243,17 @@ section {
     display: none;
   }
 
-  .title,
   section,
-  h2,
-  h4 {
+  h2 {
     padding: 0rem !important;
+    font-size: 1rem !important;
+    font-weight: normal !important;
   }
+
+  .title {
+    padding: 0rem !important;
+    font-size: 1.5rem;
+  }
+
 }
 </style>

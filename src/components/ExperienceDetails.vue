@@ -74,4 +74,11 @@ if (months > 0) {
 ul {
     padding-left: 1rem;
 }
+
+@media print {
+    h2 {        
+        font-size: 1.2rem !important;
+        font-weight: normal !important;
+    }
+}
 </style>

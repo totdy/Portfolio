@@ -104,7 +104,7 @@ function Print() {
       <h4 class="title">Projects</h4>
       <Project name="Greenhouse CMS"
         description="User-friendly dashboard I built for my mom to track greenhouse harvests, sales, and revenue."
-        :stack="['FastAPI', 'Pydantic', 'Alembic', 'SQLite', 'Vue', 'TypeScript', 'CSS', 'Chart.js', 'i18n']"
+        :stack="['Docker', 'FastAPI', 'Pydantic', 'Alembic', 'SQLite', 'Vue', 'TypeScript', 'CSS', 'Chart.js', 'i18n']"
         :screens="['greenhouseCMS1.png', 'greenhouseCMS2.png', 'greenhouseCMS3.png']"
         source="https://github.com/totdy/GreenhouseCMS" />
       <Project name="Home Away" description="Developed a simple Airbnb clone as my final project."

@@ -1,7 +1,8 @@
 <template>
     <article>
         <div class="carousel">
-            <img class="ignoreTheme" :src="baseUrl + 'assets/screenshots/' + screens[index]">
+            <img :class="{ ignoreTheme: true, bigBoy: IsPresented }" ref="presenter" @click="IsPresented = !IsPresented"
+                :src="baseUrl + 'assets/screenshots/' + screens[index]" />
             <div>
                 <button @click="prev">←</button>
                 <button @click="next">→</button>
@@ -67,6 +68,7 @@ const props = defineProps({
 const baseUrl = import.meta.env.BASE_URL
 
 const index = ref(0)
+const IsPresented = ref(false)
 
 function prev() {
     index.value--
@@ -140,9 +142,14 @@ h3 {
 
     button {
         padding: 0.4rem 1rem;
+
         background-color: var(--bg1);
+
         font-size: 2rem;
+
         align-self: center;
+
+        pointer-events: auto;
     }
 
     div {
@@ -155,6 +162,10 @@ h3 {
         display: none;
 
         z-index: 1;
+
+        padding: 0 1rem;
+
+        pointer-events: none;
     }
 
     img {
@@ -163,9 +174,29 @@ h3 {
         aspect-ratio: 16/9;
 
         z-index: 0;
+        position: relative;
 
         border-radius: 1rem;
+
+        cursor: zoom-in;
     }
+}
+
+.bigBoy {
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+    z-index: 1000 !important;
+
+    transform: translate(-50%, -50%);
+
+    width: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+
+    box-shadow: 0px 10px 20px 5px #888;
+
+    cursor: zoom-out !important;
 }
 
 @media print {

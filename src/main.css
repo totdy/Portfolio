@@ -22,6 +22,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: monospace, Inter, sans-serif;
+    font-size: 1em;
     text-decoration: none;
     color: var(--tc);
 }
